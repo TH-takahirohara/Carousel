@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class ViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var mainCollectionView: UICollectionView!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -19,26 +19,44 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mainCollectionView.delegate = self
+        mainCollectionView.dataSource = self
+        
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        let mainLayout = UICollectionViewFlowLayout()
+        mainLayout.scrollDirection = .horizontal
+        let mainSize = mainCollectionView.frame.height
+        mainLayout.itemSize = CGSize(width: mainSize, height: mainSize)
+        mainCollectionView.collectionViewLayout = mainLayout
+        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        let size = collectionView.frame.height
+        layout.itemSize = CGSize(width: size, height: size)
         collectionView.collectionViewLayout = layout
-        
-        imageView.image = UIImage(named: "room_1")
-//        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
 
     }
     
     // MARK: - UICollectionViewDataSource
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: CarouselCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CarouselCell
-        
-        cell.imageView.image = UIImage(named: imageNames[indexPath.row])
-        
-        return cell
+        if collectionView == mainCollectionView {
+            let cell: MainCarouselCell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCell", for: indexPath) as! MainCarouselCell
+            
+            cell.mainImageView.image = UIImage(named: imageNames[indexPath.row])
+            
+            return cell
+            
+        } else {
+            let cell: CarouselCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CarouselCell
+            
+            cell.imageView.image = UIImage(named: imageNames[indexPath.row])
+            
+            return cell
+            
+        }
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -48,12 +66,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     // MARK: - UICollectionViewDelegate
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.imageView.image = UIImage(named: imageNames[indexPath.row])
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let size = collectionView.frame.height
-        return CGSize(width: size, height: size)
+        if collectionView == self.collectionView {
+            mainCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }
     }
     
 }

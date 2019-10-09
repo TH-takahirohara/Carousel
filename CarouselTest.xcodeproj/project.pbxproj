@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18D6A8E1234E340400A82680 /* MainCarouselCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18D6A8E0234E340400A82680 /* MainCarouselCell.swift */; };
 		43D86BE3234C6ECD002F0361 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D86BE2234C6ECD002F0361 /* AppDelegate.swift */; };
 		43D86BE5234C6ECD002F0361 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D86BE4234C6ECD002F0361 /* SceneDelegate.swift */; };
 		43D86BE7234C6ECD002F0361 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D86BE6234C6ECD002F0361 /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18D6A8E0234E340400A82680 /* MainCarouselCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCarouselCell.swift; sourceTree = "<group>"; };
 		43D86BDF234C6ECD002F0361 /* CarouselTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarouselTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D86BE2234C6ECD002F0361 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43D86BE4234C6ECD002F0361 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,7 @@
 				43D86BE4234C6ECD002F0361 /* SceneDelegate.swift */,
 				43D86BE6234C6ECD002F0361 /* ViewController.swift */,
 				43D86BF8234C7A6D002F0361 /* CarouselCell.swift */,
+				18D6A8E0234E340400A82680 /* MainCarouselCell.swift */,
 				43D86BE8234C6ECD002F0361 /* Main.storyboard */,
 				43D86BEB234C6ECE002F0361 /* Assets.xcassets */,
 				43D86BED234C6ECE002F0361 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18D6A8E1234E340400A82680 /* MainCarouselCell.swift in Sources */,
 				43D86BE7234C6ECD002F0361 /* ViewController.swift in Sources */,
 				43D86BE3234C6ECD002F0361 /* AppDelegate.swift in Sources */,
 				43D86BE5234C6ECD002F0361 /* SceneDelegate.swift in Sources */,

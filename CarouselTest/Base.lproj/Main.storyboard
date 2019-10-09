@@ -56,27 +56,61 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L2R-jv-dPK">
-                                <rect key="frame" x="87" y="328" width="240" height="240"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="XFe-1j-ouY">
+                                <rect key="frame" x="0.0" y="144" width="414" height="400"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="240" id="GQe-Ij-YiW"/>
-                                    <constraint firstAttribute="width" constant="240" id="y9e-8T-PWo"/>
+                                    <constraint firstAttribute="height" constant="400" id="GSw-UV-ktA"/>
                                 </constraints>
-                            </imageView>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2uj-Aj-Wc7">
+                                    <size key="itemSize" width="350" height="350"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MainCell" id="Occ-NZ-tfQ" customClass="MainCarouselCell" customModule="CarouselTest" customModuleProvider="target">
+                                        <rect key="frame" x="32" y="0.0" width="350" height="350"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yCs-GL-45U">
+                                            <rect key="frame" x="0.0" y="0.0" width="350" height="350"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GTo-4f-xVP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="350" height="350"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="350" id="BwU-3M-Tb5"/>
+                                                        <constraint firstAttribute="height" constant="350" id="C4w-V2-h2O"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GTo-4f-xVP" firstAttribute="centerX" secondItem="yCs-GL-45U" secondAttribute="centerX" id="9Go-kl-hx4"/>
+                                                <constraint firstItem="GTo-4f-xVP" firstAttribute="centerY" secondItem="yCs-GL-45U" secondAttribute="centerY" id="eGi-U1-a8W"/>
+                                            </constraints>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="350" height="350"/>
+                                        <connections>
+                                            <outlet property="mainImageView" destination="GTo-4f-xVP" id="jRh-aj-3OR"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="L2R-jv-dPK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1eT-rx-Idw"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Vcq-65-9CG" secondAttribute="bottom" id="8im-9A-0Dd"/>
                             <constraint firstItem="Vcq-65-9CG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EJF-Bx-kAq"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XFe-1j-ouY" secondAttribute="trailing" id="V8k-6z-DW6"/>
+                            <constraint firstItem="XFe-1j-ouY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="VzD-u9-Bpc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Vcq-65-9CG" secondAttribute="trailing" id="gdx-HT-Zzs"/>
-                            <constraint firstItem="L2R-jv-dPK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="xEP-3v-z4g"/>
+                            <constraint firstItem="XFe-1j-ouY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="hD5-pz-EDr"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="Vcq-65-9CG" id="c9E-dn-8sC"/>
-                        <outlet property="imageView" destination="L2R-jv-dPK" id="BkV-Ia-c6z"/>
+                        <outlet property="mainCollectionView" destination="XFe-1j-ouY" id="1lE-U8-Xhc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

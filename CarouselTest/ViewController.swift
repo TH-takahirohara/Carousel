@@ -67,7 +67,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == self.collectionView {
-            mainCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+            self.mainCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        } else if collectionView == self.mainCollectionView {
+            self.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         }
     }
     
